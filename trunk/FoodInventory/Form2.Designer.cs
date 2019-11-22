@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGrid1 = new System.Windows.Forms.DataGrid();
-            this.dbDataSet = new FoodInventory.dbDataSet();
-            this.productsTableAdapter = new FoodInventory.dbDataSetTableAdapters.ProductsTableAdapter();
             this.newMenuItemMenuItem = new System.Windows.Forms.MenuItem();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new FoodInventory.dbDataSet();
+            this.dataGrid1 = new System.Windows.Forms.DataGrid();
             this.dataGridTableStyle1 = new System.Windows.Forms.DataGridTableStyle();
             this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn2 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn3 = new System.Windows.Forms.DataGridTextBoxColumn();
             this.dataGridTextBoxColumn4 = new System.Windows.Forms.DataGridTextBoxColumn();
+            this.productsTableAdapter = new FoodInventory.dbDataSetTableAdapters.ProductsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             this.SuspendLayout();
@@ -48,10 +48,21 @@
             // 
             this.mainMenu1.MenuItems.Add(this.newMenuItemMenuItem);
             // 
+            // newMenuItemMenuItem
+            // 
+            this.newMenuItemMenuItem.Text = "New";
+            this.newMenuItemMenuItem.Click += new System.EventHandler(this.newMenuItemMenuItem_Click);
+            // 
             // productsBindingSource
             // 
             this.productsBindingSource.DataMember = "Products";
             this.productsBindingSource.DataSource = this.dbDataSet;
+            // 
+            // dbDataSet
+            // 
+            this.dbDataSet.DataSetName = "dbDataSet";
+            this.dbDataSet.Prefix = "";
+            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGrid1
             // 
@@ -64,21 +75,6 @@
             this.dataGrid1.TableStyles.Add(this.dataGridTableStyle1);
             this.dataGrid1.CurrentCellChanged += new System.EventHandler(this.dataGrid1_CurrentCellChanged);
             this.dataGrid1.Click += new System.EventHandler(this.dataGrid1_Click);
-            // 
-            // dbDataSet
-            // 
-            this.dbDataSet.DataSetName = "dbDataSet";
-            this.dbDataSet.Prefix = "";
-            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // newMenuItemMenuItem
-            // 
-            this.newMenuItemMenuItem.Text = "New";
-            this.newMenuItemMenuItem.Click += new System.EventHandler(this.newMenuItemMenuItem_Click);
             // 
             // dataGridTableStyle1
             // 
@@ -116,6 +112,10 @@
             this.dataGridTextBoxColumn4.HeaderText = "Miejsce";
             this.dataGridTextBoxColumn4.MappingName = "location";
             // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -126,7 +126,7 @@
             this.Menu = this.mainMenu1;
             this.MinimizeBox = false;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "ListForm";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
